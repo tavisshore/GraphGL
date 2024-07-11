@@ -1,0 +1,29 @@
+# --------------------------------------------
+# Executable and its arguments
+executable    = /usr/bin/rsync
+arguments     = -a -v /mnt/fast/nobackup/users/ts00987/vol/research/deep_localisation/sat/data/ /vol/research/deep_localisation/sat/data/
+environment   = "mount=/vol/research/deep_localisation/sat/"
+
+# --------------------------------------------
+# Input, Output and Log files
+log    = /vol/research/deep_localisation/sat/submit_files/logs/c$(cluster).$(process).log
+output = /vol/research/deep_localisation/sat/submit_files/logs/c$(cluster).$(process).out
+error  = /vol/research/deep_localisation/sat/submit_files/logs/c$(cluster).$(process).error
+
+# -------------------------------------
+# Requirements for the Job
+requirements = HasWeka && HasStornext
+# datamove1.surrey.ac.uk
+
+# --------------------------------------
+# Resource requirements
+request_CPUs     = 1
+request_memory = 4096
+
++CanCheckpoint = False
++JobRunTime = 1
+
+# -----------------------------------
+# Queue commands
+queue 1
+

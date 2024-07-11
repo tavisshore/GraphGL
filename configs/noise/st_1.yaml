@@ -1,0 +1,9 @@
+# Configs to experiment with varying levels of noise, both augmenting and during query
+
+loss: 'triplet'
+encoder: 'sage'
+
+p_x_2: 0.2
+p_e_2: 0.2
+eval:
+  p_x_2: 0.0
